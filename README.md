@@ -21,5 +21,6 @@ make build
 ```bash
 make deps
 make build-prod
-docker build -t simple_server:latest .
+docker build -t agluhov/simple_server:latest .
+docker run -it --rm --name simple_server -p 8080:8080 agluhov/simple_server:latest
 ```

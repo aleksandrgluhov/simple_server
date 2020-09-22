@@ -1,4 +1,7 @@
-FROM alpine:latest
+FROM scratch
 LABEL MAINTAINER="Aleksandr Glukhov"
 
-ADD
+ADD simple_server /
+
+EXPOSE 8080
+CMD ["/simple_server"]

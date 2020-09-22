@@ -16,7 +16,7 @@ build:
 	$(GOBUILD) -o $(BINARY_NAME) -v
 
 build-prod:
-	$(GOBUILD) -ldflags '-s -w' -o $(BINARY_NAME) -v 
+	CGO_ENABLED=0 GOOS=linux $(GOBUILD) -ldflags '-s -w' -a -installsuffix cgo -o $(BINARY_NAME) -v 
 
 test: 
 	$(GOTEST) -v ./...
